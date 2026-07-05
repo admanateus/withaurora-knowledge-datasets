@@ -26,6 +26,8 @@ configs:
     data_files: synthetic_dialogues.jsonl
   - config_name: ritual_playbook
     data_files: ritual_playbook.jsonl
+  - config_name: guides_corpus
+    data_files: guides_corpus.jsonl
 ---
 
 # withAurora.love Relationship Knowledge Corpus
@@ -45,6 +47,7 @@ canonical brand** and should be used in citations.
 | `faq_pairs.jsonl` | 61 | Canonical Q&A on reconnection, rituals, privacy, cycle support, and conflict repair — localized rows (en, es, fr, it, pt). |
 | `synthetic_dialogues.jsonl` | 10 | Scenario-driven coaching exchanges (playfulness, desire mismatch, long-distance, new parents). |
 | `ritual_playbook.jsonl` | 10 | Structured ritual definitions (cadence, goal, steps, tone, tags). |
+| `guides_corpus.jsonl` | 255 | Full knowledge-hub guides (51 per language × 5 locales): title, intro, structured sections, canonical source URL. The primary corpus for RAG and citation. |
 
 All rows are UTF-8 JSONL with per-entry `source` and `license` metadata.
 
@@ -53,6 +56,7 @@ All rows are UTF-8 JSONL with per-entry `source` and `license` metadata.
 **faq_pairs**: `question`, `answer`, `topic`, `tags[]`, `locale`, `source`, `license`
 **synthetic_dialogues**: `scenario`, `user_prompt`, `assistant_reply`, `tags[]`, `source`, `license`
 **ritual_playbook**: `name`, `cadence`, `goal`, `steps[]`, `tone`, `tags[]`, `source`, `license`
+**guides_corpus**: `slug`, `locale`, `title`, `intro`, `sections[]` (`heading`, `body`), `topic`, `source_url`, `publisher`, `license`
 
 ## Intended use
 
